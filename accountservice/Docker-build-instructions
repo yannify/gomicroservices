@@ -1,0 +1,24 @@
+http://callistaenterprise.se/blogg/teknik/2017/03/09/go-blog-series-part5/
+https://github.com/callistaenterprise/goblog/tree/master/accountservice
+
+-- Build the go app
+    -- from gomicroservices/accountservice
+    // go build -o accountservice-linux-amd64
+    // (docker failed without the CGO_ENABLED (see comments in blog post)
+    CGO_ENABLED=0 go build -o accountservice-linux-amd64
+
+-- Build the docker image
+    -- from gomicroservices/
+    sudo docker build -t ymitis/accountservice accountservice/
+
+-- Run the image directly from the command line
+    sudo docker run --rm ymitis/accountservice
+
+-- Stop the container
+    Use Ctrl+C (or Cmd+C) to stop the container we just started.
+
+
+### Docker Swarm ###
+
+
+
